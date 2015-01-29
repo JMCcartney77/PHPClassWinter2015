@@ -3,7 +3,8 @@
     $investment = $_POST['investment'];
     $interest_rate = $_POST['interest_rate'];
     $years = $_POST['years'];
-
+    
+    
     // validate investment entry
     if ( empty($investment) ) {
         $error_message = 'Investment is a required field.'; }
@@ -63,5 +64,7 @@
         <label>Future Value:</label>
         <span><?php echo $future_value_f; ?></span><br />
     </div>
+    date($format)
 </body>
+    
 </html>

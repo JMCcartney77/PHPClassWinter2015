@@ -11,8 +11,15 @@
     <h1>Future Value Calculator</h1>
     <?php if (!empty($error_message)) { ?>
         <p class="error"><?php echo $error_message; ?></p>
-        
     <?php } // end if ?>
+        
+        <?php
+        $investment = rand(1000, 10000);
+        $interest_rate = rand(1000, 10000);
+        $years = rand(0, 50);
+        ?>
+        
+       
     <form action="display_results.php" method="post">
 
         <div id="data">
@@ -33,9 +40,8 @@
             <label>&nbsp;</label>
             <input type="submit" value="Calculate"/><br />
         </div>
-        
+
     </form>
     </div>
-    
 </body>
 </html>

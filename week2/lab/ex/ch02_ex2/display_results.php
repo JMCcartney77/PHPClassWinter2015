@@ -18,7 +18,7 @@
         $error_message = 'Interest rate is a required field.'; }
     else if ( !is_numeric($interest_rate) )  {
         $error_message = 'Interest rate must be a valid number.'; }
-    else if ( $interest_rate <= 15 ) {
+    else if ( $interest_rate > 15 ) {
         $error_message = 'Interest rate must be greater than zero and less than or equal to 15.'; }
 
     // set error message to empty string if no invalid entries
@@ -63,8 +63,10 @@
 
         <label>Future Value:</label>
         <span><?php echo $future_value_f; ?></span><br />
+        <?php date_default_timezone_set('UTC');?>
+        <span><?php echo date('l jS \of F Y h:i:s A'); ?></span><br />
     </div>
-    date($format)
+        
 </body>
     
 </html>

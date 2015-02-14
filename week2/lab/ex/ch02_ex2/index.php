@@ -13,11 +13,7 @@
         <p class="error"><?php echo $error_message; ?></p>
     <?php } // end if ?>
         
-        <?php
-        $investment = rand(1000, 10000);
-        $interest_rate = rand(1000, 10000);
-        $years = rand(0, 50);
-        ?>
+        
         
        
     <form action="display_results.php" method="post">

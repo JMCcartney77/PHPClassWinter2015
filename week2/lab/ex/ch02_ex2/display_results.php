@@ -7,19 +7,19 @@
     
     // validate investment entry
     if ( empty($investment) ) {
-        $error_message = 'Investment is a required field.'; }
+        $error_message = 'Investment is a required field. '; }
     else if ( !is_numeric($investment) )  {
-        $error_message = 'Investment must be a valid number.'; }
+        $error_message = 'Investment must be a valid number. '; }
     else if ( $investment <= 0 ) {
-        $error_message = 'Investment must be greater than zero.'; }
+        $error_message = 'Investment must be greater than zero. '; }
 
     // validate interest rate entry
     else if ( empty($interest_rate) ) {
-        $error_message = 'Interest rate is a required field.'; }
+        $error_message = 'Interest rate is a required field. '; }
     else if ( !is_numeric($interest_rate) )  {
-        $error_message = 'Interest rate must be a valid number.'; }
+        $error_message = 'Interest rate must be a valid number. '; }
     else if ( $interest_rate > 15 ) {
-        $error_message = 'Interest rate must be greater than zero and less than or equal to 15.'; }
+        $error_message = 'Interest rate must be greater than zero and less than or equal to 15. '; }
 
     // set error message to empty string if no invalid entries
     else {
@@ -67,6 +67,7 @@
         <span><?php echo date('l jS \of F Y h:i:s A'); ?></span><br />
     </div>
         
+    <a href="index.php">Go Back</a>
 </body>
     
 </html>

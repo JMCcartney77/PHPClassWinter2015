@@ -7,7 +7,7 @@ body {
     margin: 0 auto;
     padding: 20px 20px;
     background: white;
-    border: 5px solid navy;
+    border: 9px inset green;
 }
 h1 {
     color: navy;

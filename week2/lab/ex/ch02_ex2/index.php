@@ -21,15 +21,15 @@
         <div id="data">
             <label>Investment Amount:</label>
             <input type="text" name="investment"
-                   value="<?php echo $investment; ?>"/><br />
+                   /><br />
 
             <label>Yearly Interest Rate:</label>
             <input type="text" name="interest_rate"
-                   value="<?php echo $interest_rate; ?>"/><br />
+                   /><br />
 
             <label>Number of Years:</label>
             <input type="text" name="years"
-                   value="<?php echo $years; ?>"/><br />
+                   /><br />
         </div>
 
         <div id="buttons">

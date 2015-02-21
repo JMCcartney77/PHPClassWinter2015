@@ -9,7 +9,7 @@
     
     $select_via = filter_input (INPUT_POST, 'contact_via');
     $comments = filter_input (INPUT_POST, 'comments');
-    
+    $password = filter_input(INPUT_POST, 'pass');
     // get the rest of the data for the form
 
     // for the heard_from radio buttons,

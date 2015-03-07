@@ -12,17 +12,51 @@ and open the template in the editor.
     <body>
         <?php
         $email = filter_input(INPUT_POST, 'email');
-        $password = filter_input(INPUT_POST, 'pass');         
-  
+        $password = filter_input(INPUT_POST, 'pass'); 
+        $length = strlen($password);
+        $pass = false;
+        
             if ( filter_var($email, FILTER_VALIDATE_EMAIL) != false ) {
                 echo '<p>this email is valid</p>';
+                $pass = true;
             } else {
                 echo '<p>this email is <strong>NOT</strong> valid</p>';
+                $pass = false;
+            }
+            
+            if ($length >= 4){
+              $pass = true;
+              echo '<p>this password is valid</p>';
+            }
+            else{
+                echo '<p>this password is <strong>NOT</strong> valid</p>';
+                $pass = false;
+            }
+            
+            
+            if ($pass == true){
+                $dsn = 'mysql:host=localhost;dbname=phpclasswinter2015';
+                $username = 'mgs_user';
+                $pw = 'pa55word';
+
+                try {
+                $db = new PDO($dsn, $username, $pw);
+                
+                // Creating the query
+                $query = "INSERT INTO signup (email, password) VALUES ('$email', '$password')";
+    
+                // Running the query
+                $db->exec($query);
+                
+                } catch (PDOException $e) {
+                echo $e->getMessage();
+                
+                }
             }
         ?>
         <form action="#" method="post">  
             email <input type="email" name="email" value="<?php echo $email; ?>" /> <br /> 
-            Full name <input type="text" name="fname" value="<?php echo $fname; ?>" /> <br />            
+            password <input type="text" name="pass" value="<?php echo $password; ?>" /> <br />            
                
                 
     <input type="submit" value="Submit" />

@@ -15,6 +15,7 @@ and open the template in the editor.
         $password = filter_input(INPUT_POST, 'pass'); 
         $length = strlen($password);
         $pass = false;
+        $pw = '';
         
             if ( filter_var($email, FILTER_VALIDATE_EMAIL) != false ) {
                 echo '<p>this email is valid</p>';
@@ -36,11 +37,12 @@ and open the template in the editor.
             
             if ($pass == true){
                 $dsn = 'mysql:host=localhost;dbname=phpclasswinter2015';
-                $username = 'mgs_user';
-                $pw = 'pa55word';
+                $username = $_POST['email'];
+                $passwordz = $_POST['pass'];
+                
 
                 try {
-                $db = new PDO($dsn, $username, $pw);
+                $db = new PDO("mysql:host=localhost;dbname=phpclasswinter2015;port=3306;","root","");
                 
                 // Creating the query
                 $query = "INSERT INTO signup (email, password) VALUES ('$email', '$password')";

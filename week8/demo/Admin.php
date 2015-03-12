@@ -9,6 +9,8 @@
         // put your code here
         session_start();
         
+        include_once './header.php';
+        
         if ( !isset($_SESSION['loggedin']) 
                 || $_SESSION['loggedin'] !== true 
             ) {
@@ -16,7 +18,7 @@
             //die('Access not allowed');
         }
         
-        include_once './header.php';
+        
         ?>
         
         <h1>Admin Page</h1>

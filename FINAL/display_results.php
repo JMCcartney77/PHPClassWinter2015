@@ -77,13 +77,15 @@
             <span>Comments:</span><br />
             <span><?php echo $comments?></span><br />
             
-    <?php  $db = new PDO("mysql:host=localhost;dbname=phpclasswinter2015;port=3306;","root","");
+    <?php 
+    
+    $db = new PDO("mysql:host=localhost;dbname=phpclasswinter2015;port=3306;","root","");
   
-    $dbs = $db->prepare('insert into account set contact_via = :contact via, email = :email, phone = :phone, comments = :comments, heard_from = :heard');
+    $dbs = $db->prepare('insert into account set contact = :contact, email = :email, phone = :phone, comments = :comments, heard = :heard');
     
     
    
-    $dbs->bindParam(':contact_via', $contact_via, PDO::PARAM_STR);
+    $dbs->bindParam(':contact', $contact_via, PDO::PARAM_STR);
     $dbs->bindParam(':email', $email, PDO::PARAM_STR);
     $dbs->bindParam(':phone', $phone, PDO::PARAM_STR);
     $dbs->bindParam(':heard', $heard_from, PDO::PARAM_STR);

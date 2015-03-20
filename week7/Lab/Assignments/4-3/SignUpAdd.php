@@ -25,7 +25,7 @@ and open the template in the editor.
         $errorMessage[1] = emailIsValid($email);
         
         //check if email exists
-        $erroMessage[2] = doesEmailExist($email);
+        $errorMessage[2] = doesEmailExist($email);
 
         //Checking If the password is empty
         $errorMessage[3] =  passwordIsEmty($password);

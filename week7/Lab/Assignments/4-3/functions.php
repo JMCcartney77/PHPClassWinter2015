@@ -10,23 +10,20 @@ and open the template in the editor.
         <title></title>
     </head>
     <body>
-        <?php
-        
+        <?php       
 
 function emailIsEmpty($email) {
     if (empty($email) || !is_string($email)) {
-        $error = "Email is a required field.";
+        $error = "Email must be Filled In!";
         return $error;
     }
 }
-
 function emailIsValid($email) {
     if (filter_var($email, FILTER_VALIDATE_EMAIL) != true) {
         $error = "The email address is not formatted properly.";
         return $error;
     }
 }
-
 function doesEmailExist($email) {
    $db = new PDO("mysql:host=localhost;dbname=phpclasswinter2015;port=3306;", "root", "");
     $dbs = $db->prepare('SELECT * FROM signup WHERE email = :email');
@@ -38,21 +35,18 @@ function doesEmailExist($email) {
         return $error;
     }
 }
-
 function passwordIsEmpty($password) {
     if (empty($password) || !is_string($password)) {
         $error = "Password is a required field.";
         return $error;
     }
 }
-
 function passwordIsValid($password) {
     if (strlen($password) < 5) {
         $error = "Password must be greater than four charaters long.";
         return $error;
     }
 }
-
 function insertUser($email, $password) {
 
     // Encrypt the password before adding to database.
@@ -72,7 +66,6 @@ function insertUser($email, $password) {
         return 'User info was NOT added  <br />';
     }
 }
-
 function checkUserLogin($email, $password) {
 
     // Encrypt the password before adding to database.

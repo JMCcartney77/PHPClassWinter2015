@@ -11,7 +11,7 @@ and open the template in the editor.
     </head>
     <body>
         <?php
-        include './functions.php';
+        include './SignUp.php'; 
         $email = filter_input(INPUT_POST, 'email');
         $password = filter_input(INPUT_POST, 'password');
 
@@ -22,7 +22,7 @@ and open the template in the editor.
         $errorMessage[0] = emailIsEmpty($email);
 
         //Correct email
-        $errorMessage[1] = emailIsValid($email);
+        $errorMessage[1] = \emailIsValid($email);
         
         //check if email exists
         $errorMessage[2] = doesEmailExist($email);
@@ -31,7 +31,7 @@ and open the template in the editor.
         $errorMessage[3] =  passwordIsEmpty($password);
         
         //Checking If the password is a valid 5 digit pass
-        $errorMessage[4] =  emailIsValid($password);
+        $errorMessage[4] = \passwordIsValid($password);
         
         // if errors are present, show them and re-display the signup page
         $testarray = array_filter($errorMessage);
@@ -39,7 +39,7 @@ and open the template in the editor.
             foreach ($errorMessage as $emsg) {
                 if (!empty($emsg)) {
                     echo $emsg, '<br />';
-                    include './SignUpAdd.php';
+                    include './SignUpAdd.php';// the form???????????????????????????????????????????
                     exit();
                 }
             }
@@ -48,6 +48,6 @@ and open the template in the editor.
         echo $results;
 
         ?>
-        <a href="signup.php">Return to Sign-up page</a>
+        <a href="SignUp.php">Return to Sign-up page</a>
     </body>
 </html>

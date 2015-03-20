@@ -1,15 +1,4 @@
-<!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <title></title>
-    </head>
-    <body>
+
         <?php       
 function emailIsValid($email) {
     if (filter_var($email, FILTER_VALIDATE_EMAIL) != true) {
@@ -28,6 +17,13 @@ function doesEmailExist($email) {
         return $error;
     }
 }
+function emailIsEmpty($email) {
+    if (empty($email) || !is_string($email)) {
+        $error = "Email is a required field.";
+        return $error;
+    }
+}
+
 function passwordIsEmpty($password) {
     if (empty($password) || !is_string($password)) {
         $error = "Password is a required field.";
@@ -79,5 +75,4 @@ function checkUserLogin($email, $password) {
     }
 }
         ?>
-    </body>
-</html>
+ 

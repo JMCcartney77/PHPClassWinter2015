@@ -14,15 +14,14 @@ and open the template in the editor.
         $email = filter_input(INPUT_POST, 'email');
         $password = filter_input(INPUT_POST, 'password');
         $errorMessage = "";
-        //Checking If the email field is filled in
         if (empty($email)) {
             $errorMessage .= '<p>Email fieldis required</p><br />';
         }
-        //Correct email
+       
         if (filter_var($email, FILTER_VALIDATE_EMAIL) != true) {
             $errorMessage .= '<p>this email is invalid</p><br />';
         }
-        //Checking If the password is empty
+        
         if (empty($password)) {
             $errorMessage .= '<p>Enter a password</p><br />';
         }

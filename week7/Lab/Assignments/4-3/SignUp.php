@@ -10,22 +10,15 @@ and open the template in the editor.
         <title></title>
     </head>
     <body>
+        Sign Up <br /><br />
         <?php
-       if (!empty($_POST)) {
-            $email = filter_input(INPUT_POST, 'email');
-            $password = filter_input(INPUT_POST, 'pass');
-           
-        } else {
-            $email = "";
-            $password = "";
-        }
+        $email = filter_input(INPUT_POST, 'email');
+        $password = filter_input(INPUT_POST, 'pass');
         ?>
-   
+         
         <form action="SignUpAdd.php" method="post">  
-            email <input type="email" name="email" value="<?php echo $email; ?>" /> <br /> 
-            password <input type="text" name="password" value="<?php echo $password; ?>" /> <br />            
-
-
+            email <input type="text" name="email" value="<?php echo $email; ?>" /> <br /> 
+            password <input type="password" name="password" value="<?php echo $password; ?>" /> <br />            
             <input type="submit" value="Submit" />
         </form>
     </body>

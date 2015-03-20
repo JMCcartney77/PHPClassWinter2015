@@ -11,13 +11,6 @@ and open the template in the editor.
     </head>
     <body>
         <?php       
-
-function emailIsEmpty($email) {
-    if (empty($email) || !is_string($email)) {
-        $error = "Email must be Filled In!";
-        return $error;
-    }
-}
 function emailIsValid($email) {
     if (filter_var($email, FILTER_VALIDATE_EMAIL) != true) {
         $error = "The email address is not formatted properly.";
@@ -52,7 +45,7 @@ function insertUser($email, $password) {
     // Encrypt the password before adding to database.
     $passwordHash = sha1($password);
 
-    $db = new PDO("mysql:host=localhost;dbname=phpclasswinter2015; port=3306;", "root", "");
+    $db = new PDO("mysql:host=localhost;dbname=phpclasswinter2015;port=3306;","root","");
     $dbs = $db->prepare('insert into signup set email = :email, password =:password');
 
     // you must bind the data before you execute

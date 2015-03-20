@@ -16,7 +16,7 @@ and open the template in the editor.
         $password = filter_input(INPUT_POST, 'password');
 
         // create eror messages array
-        $errorMessage = array();
+        $errorMessage = array();{
         // is email empty?
         $errorMessage[0] = emailIsEmpty($email);
         // i is the email valid?
@@ -25,7 +25,7 @@ and open the template in the editor.
         $errorMessage[2] = passwordIsEmpty($password);
         //Checking If the password is a valid 5 digit pass
         $errorMessage[3] = (strlen($password) < 5);
-
+        }
 
         // If errors exist,display them, show log in form.
         $testArray = array_filter($erroMessage);
@@ -35,7 +35,7 @@ and open the template in the editor.
                     echo $emsg, '<br />';
                 }
 
-                include 'login.php';
+                include 'Login.php';
                 exit();
             }
         }

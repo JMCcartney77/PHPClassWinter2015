@@ -20,7 +20,7 @@ and open the template in the editor.
         }
         ?>
 
-        <form action="loginAdd.php" method="post">  
+        <form action="LoginAdd.php" method="post">  
             email <input type="email" name="email" value="<?php echo $email; ?>" /> <br /> 
             password <input type="password" name="password" value="<?php echo $password; ?>" /> <br />            
 

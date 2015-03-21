@@ -1,4 +1,5 @@
 <?php
+
 if (isset($_POST['tasklist'])) {
     $task_list = $_POST['tasklist'];
 } else {
@@ -10,13 +11,13 @@ if (isset($_POST['tasklist'])) {
 
 $errors = array();
 
-switch( $_POST['action'] ) {
+switch ($_POST['action']) {
     case 'Add Task':
         $new_task = $_POST['newtask'];
         if (empty($new_task)) {
             $errors[] = 'The new task cannot be empty.';
         } else {
-            // $task_list[] = $new_task;
+            // tasks
             array_push($task_list, $new_task);
         }
         break;
@@ -47,12 +48,12 @@ switch( $_POST['action'] ) {
         if ($task_index == 0) {
             $errors[] = 'You can\'t promote the first task.';
         } else {
-            // get the values for the two indexes
+            // index values
             $task_value = $task_list[$task_index];
-            $prior_task_value = $task_list[$task_index-1];
+            $prior_task_value = $task_list[$task_index - 1];
 
-            // swap the values
-            $task_list[$task_index-1] = $task_value;
+            // index
+            $task_list[$task_index - 1] = $task_value;
             $task_list[$task_index] = $prior_task_value;
             break;
         }

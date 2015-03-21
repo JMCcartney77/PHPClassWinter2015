@@ -14,17 +14,17 @@
 
         <label>Name:</label>
         <input type="text" name="name" 
-               value="<?php echo htmlspecialchars($name); ?>"/>
+               value="<?php echo ""; ?>"/>
         <br />
 
         <label>E-Mail:</label>
         <input type="text" name="email" 
-               value="<?php echo htmlspecialchars($email); ?>"/>
+               value="<?php echo ""; ?>"/>
         <br />
 
         <label>Phone Number:</label>
-        <input type="text" name="phone" 
-               value="<?php echo htmlspecialchars($phone); ?>"/>
+        <input type="int" name="phone" 
+               value="<?php echo ""; ?>"/>
         <br />
 
         <label>&nbsp;</label>

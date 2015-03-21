@@ -10,7 +10,7 @@ and open the template in the editor.
         <title></title>
     </head>
     <body>
-        Sign Up
+        Sign Up...
          <br /><br />
         <?php
         $email = filter_input(INPUT_POST, 'email');

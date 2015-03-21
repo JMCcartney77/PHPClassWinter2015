@@ -22,7 +22,7 @@ and open the template in the editor.
         $errorMessage[0] = emailIsEmpty($email);
 
         //Correct email
-        $errorMessage[1] = \emailIsValid($email);
+        $errorMessage[1] = emailIsValid($email);
         
         //check if email exists
         $errorMessage[2] = doesEmailExist($email);
@@ -31,7 +31,7 @@ and open the template in the editor.
         $errorMessage[3] =  passwordIsEmpty($password);
         
         //Checking If the password is a valid 5 digit pass
-        $errorMessage[4] = \passwordIsValid($password);
+        $errorMessage[4] = passwordIsValid($password);
         
         // if errors are present, show them and re-display the signup page
         $testarray = array_filter($errorMessage);
